@@ -1,0 +1,170 @@
+.excel-app {
+	font-family: Arial, sans-serif;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+/* تولبار */
+.toolbar {
+	display: flex;
+	gap: 20px;
+	padding: 10px;
+	background: #f0f0f0;
+	border-bottom: 1px solid #ccc;
+	align-items: center;
+}
+
+.toolbar-group {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+}
+
+.toolbar-btn {
+	padding: 8px 12px;
+	border: 1px solid #ccc;
+	background: white;
+	cursor: pointer;
+	border-radius: 4px;
+	font-size: 14px;
+}
+
+.toolbar-btn:hover {
+	background: #e0e0e0;
+}
+
+.font-select, .size-select {
+	padding: 6px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+/* نوار فرمول */
+.formula-bar {
+	display: flex;
+	padding: 5px 10px;
+	background: #f8f8f8;
+	border-bottom: 1px solid #ddd;
+	align-items: center;
+}
+
+.cell-address {
+	width: 60px;
+	padding: 5px;
+	background: white;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	text-align: center;
+	font-weight: bold;
+	margin-right: 10px;
+}
+
+.formula-input {
+	flex: 1;
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	font-size: 14px;
+}
+
+.apply-btn {
+	padding: 5px 15px;
+	margin-left: 10px;
+	background: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.apply-btn:hover {
+	background: #45a049;
+}
+
+/* صفحه گسترده */
+.spreadsheet {
+	flex: 1;
+	overflow: auto;
+	background: white;
+}
+
+.row {
+	display: flex;
+}
+
+.cell {
+	min-width: 100px;
+	height: 30px;
+	border: 1px solid #e0e0e0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+}
+
+.header-row {
+	background: #f8f8f8;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+
+.corner-header {
+	min-width: 50px;
+	background: #e0e0e0;
+	font-weight: bold;
+}
+
+.col-header {
+	background: #e0e0e0;
+	font-weight: bold;
+}
+
+.row-header {
+	min-width: 50px;
+	background: #f0f0f0;
+	font-weight: bold;
+}
+
+.data-cell {
+	justify-content: flex-start;
+	padding: 0 5px;
+	cursor: cell;
+	background: white;
+}
+
+.data-cell.selected {
+	background: #e3f2fd !important;
+	border: 2px solid #2196F3 !important;
+}
+
+/* نوار وضعیت */
+.status-bar {
+	display: flex;
+	gap: 20px;
+	padding: 5px 10px;
+	background: #f0f0f0;
+	border-top: 1px solid #ccc;
+	font-size: 12px;
+	color: #666;
+}
+
+/* اسکرول بار */
+.spreadsheet::-webkit-scrollbar {
+	width: 12px;
+	height: 12px;
+}
+
+.spreadsheet::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+.spreadsheet::-webkit-scrollbar-thumb {
+	background: #c1c1c1;
+	border-radius: 6px;
+}
+
+.spreadsheet::-webkit-scrollbar-thumb:hover {
+	background: #a8a8a8;
+}

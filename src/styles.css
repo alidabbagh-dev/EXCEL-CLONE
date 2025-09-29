@@ -1,0 +1,192 @@
+/* src/styles.css — استایل‌های پایه برای جدول و کامپوننت‌ها */
+/* پایه‌ای و قابل توسعه. راستچین فعال است. */
+
+:root {
+	--grid-border: #d0d7de;
+	--header-bg: #f3f4f6;
+	--selection: rgba(59, 130, 246, 0.2);
+	--selection-border: rgba(59, 130, 246, 0.8);
+	--cell-min-width: 80px;
+	--cell-min-height: 26px;
+	--freeze-bg: #fff8dc;
+	--cond-bg: #fff0f0;
+	--font-sans: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html, body, #root {
+	height: 100%;
+	margin: 0;
+	font-family: var(--font-sans);
+	background: #fafafa;
+}
+
+.app {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding: 12px;
+	box-sizing: border-box;
+}
+
+/* Toolbar */
+.toolbar {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	background: #fff;
+	padding: 8px;
+	border-radius: 8px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+	border: 1px solid #eee;
+	flex-wrap: wrap;
+}
+
+/* Spreadsheet layout */
+.sheet-wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+/* container for table to allow overflow and sticky freezes */
+.table-container {
+	position: relative;
+	overflow: auto;
+	background: #fff;
+	border: 1px solid var(--grid-border);
+	border-radius: 6px;
+	height: 600px;
+	/* default height; user can override */
+}
+
+/* grid basics */
+.grid {
+	border-collapse: collapse;
+	min-width: 700px;
+	table-layout: fixed;
+	font-size: 13px;
+}
+
+/* header cells */
+.grid th, .grid td {
+	border-bottom: 1px solid var(--grid-border);
+	border-right: 1px solid var(--grid-border);
+	padding: 0;
+	margin: 0;
+	vertical-align: middle;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+/* header */
+.grid thead th {
+	position: sticky;
+	top: 0;
+	background: var(--header-bg);
+	z-index: 5;
+	text-align: center;
+	font-weight: 600;
+	height: 32px;
+}
+
+/* row headers (first column) */
+.row-header {
+	position: sticky;
+	left: 0;
+	background: var(--header-bg);
+	z-index: 6;
+	text-align: center;
+	width: 48px;
+}
+
+/* cell */
+.cell {
+	min-width: var(--cell-min-width);
+	height: var(--cell-min-height);
+	padding: 4px 6px;
+	outline: none;
+	cursor: text;
+	background: transparent;
+	font-size: 13px;
+}
+
+/* editing input inside cell */
+.cell input {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	outline: none;
+	font: inherit;
+	padding: 0;
+	background: transparent;
+}
+
+/* selection highlight */
+.cell.selected {
+	background: var(--selection);
+	box-shadow: inset 0 0 0 2px var(--selection-border);
+}
+
+/* computed small value */
+.cell .computed {
+	display: block;
+	font-size: 11px;
+	color: #6b7280;
+	opacity: 0.9;
+	margin-top: 2px;
+}
+
+/* resizer for columns */
+.col-resizer {
+	position: absolute;
+	width: 6px;
+	right: -3px;
+	top: 0;
+	bottom: 0;
+	cursor: col-resize;
+	z-index: 10;
+}
+
+/* row resizers */
+.row-resizer {
+	position: absolute;
+	height: 6px;
+	bottom: -3px;
+	left: 0;
+	right: 0;
+	cursor: row-resize;
+	z-index: 10;
+}
+
+/* freeze style */
+.frozen {
+	background: var(--freeze-bg) !important;
+}
+
+/* conditional formatting example */
+.cond-highlight {
+	background: var(--cond-bg);
+}
+
+/* small utility */
+.btn {
+	padding: 6px 10px;
+	border-radius: 6px;
+	border: 1px solid #e6e6e6;
+	background: #fff;
+	cursor: pointer;
+}
+
+.input-inline {
+	padding: 6px;
+	border-radius: 6px;
+	border: 1px solid #e6e6e6;
+	background: #fff;
+}
+
+.footer {
+	font-size: 12px;
+	color: #666;
+	margin-top: 8px;
+}

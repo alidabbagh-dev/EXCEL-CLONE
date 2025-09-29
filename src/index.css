@@ -1,0 +1,334 @@
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #f7f7f7;
+}
+
+.app-root {
+  padding: 12px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  margin-bottom: 10px;
+}
+
+.formula-bar {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0;
+  align-items: center;
+}
+
+.formula-input {
+  min-width: 300px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+}
+
+.sheet-wrap {
+  display: inline-block;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.grid-row {
+  display: grid;
+  align-items: center;
+  gap: 0;
+}
+
+.corner-cell {
+  width: 40px;
+  height: 36px;
+}
+
+.column-header {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
+  background: #fbfbfb;
+  padding: 6px;
+}
+
+.col-name {
+  font-weight: 700;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.filter-input {
+  margin-top: 6px;
+  width: 90%;
+  padding: 4px 6px;
+  font-size: 12px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.row-header {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
+  background: #fafafa;
+  font-weight: 600;
+  width: 40px;
+}
+
+.cell {
+  height: 36px;
+  border-left: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+  padding: 6px 8px;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 14px;
+  background: #fff;
+}
+
+.cell-selected {
+  box-shadow: inset 0 0 0 2px rgba(65, 132, 255, 0.2);
+  border-color: #5b9cff;
+}
+
+.cell-placeholder {
+  border-left: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+  width: 140px;
+  height: 36px;
+  background: #fafafa;
+}
+
+/* 🎨 استایل دکمه‌های عمومی */
+.btn {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+}
+
+.btn:hover {
+  background-color: #e6e6e6;
+}
+
+/* 📌 دکمه اصلی (آبی) */
+.btn-primary {
+  background-color: #0078d7;
+  color: #fff;
+  border-color: #006bb3;
+}
+
+.btn-primary:hover {
+  background-color: #006bb3;
+}
+
+/* ✅ دکمه سبز (مثلاً برای تایید) */
+.btn-success {
+  background-color: #28a745;
+  color: #fff;
+  border-color: #218838;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+/* ❌ دکمه قرمز (برای حذف) */
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+  border-color: #c82333;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* ⚠️ دکمه زرد (هشدار) */
+.btn-warning {
+  background-color: #ffc107;
+  color: #212529;
+  border-color: #e0a800;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+/* ℹ️ دکمه خاکستری (ثانویه) */
+.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+  border-color: #545b62;
+}
+
+.btn-secondary:hover {
+  background-color: #545b62;
+}
+
+/* 🔳 دکمه Outline (شفاف با بوردر) */
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid #333;
+  color: #333;
+}
+
+.btn-outline:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn-green {
+  background-color: rgb(122, 205, 122);
+}
+
+/* 🎨 استایل ورودی رنگ */
+input[type="color"] {
+  -webkit-appearance: none;
+  /* حذف استایل پیش‌فرض کروم */
+  border: none;
+  width: 40px;
+  height: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s ease-in-out;
+}
+
+/* ✨ افکت هاور */
+input[type="color"]:hover {
+  transform: scale(1.1);
+}
+
+/* ✨ افکت فوکوس */
+input[type="color"]:focus {
+  outline: none;
+}
+
+/* 🎯 برای Webkit (کروم، سافاری) */
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+  border-radius: 4px;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 4px;
+}
+
+/* 🎯 برای فایرفاکس */
+input[type="color"]::-moz-color-swatch {
+  border: none;
+  border-radius: 4px;
+}
+
+/* 🎨 استایل عمومی برای select */
+select {
+  appearance: none;
+  /* حذف استایل پیش‌فرض مرورگر */
+  -webkit-appearance: none;
+  /* برای کروم و سافاری */
+  -moz-appearance: none;
+  /* برای فایرفاکس */
+  padding: 6px 30px 6px 12px;
+  /* فاصله داخلی */
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23333' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  /* فلش سمت راست */
+  background-size: 14px;
+  outline: none;
+}
+
+/* ✨ هاور */
+select:hover {
+  border-color: #0078d7;
+}
+
+/* ✨ فوکوس */
+select:focus {
+  outline: none;
+  border-color: #0078d7;
+  box-shadow: 0 0 0 2px rgba(0, 120, 215, 0.3);
+}
+
+/* 🎯 گزینه‌های داخل dropdown */
+select option {
+  padding: 6px;
+  font-size: 14px;
+  outline: none;
+  
+}
+
+/* 🎨 استایل option ها */
+select option {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+}
+
+/* ✨ گزینه انتخاب‌شده */
+
+/* ✨ گزینه هاور شده (روی بعضی مرورگرها کار می‌کنه) */
+select option:hover {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+/* ✅ نمونه برای فونت‌ها */
+select.font-options option[value="Arial"] {
+  font-family: Arial, sans-serif;
+}
+
+select.font-options option[value="Times New Roman"] {
+  font-family: "Times New Roman", serif;
+}
+
+select.font-options option[value="Calibri"] {
+  font-family: Calibri, sans-serif;
+}
+
+select.font-options option[value="Tahoma"] {
+  font-family: Tahoma, sans-serif;
+}
+
+
+
+@media (max-width:900px) {
+  .column-header, .cell, .cell-placeholder {
+    width: 100px !important;
+  }
+}
