@@ -1,16 +1,33 @@
-# React + Vite
+# 📊 React Excel Clone - Fully Responsive Spreadsheet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### [Live Demo](https://alidabbagh-excel-clone.vercel.app/) 🚀
 
-Currently, two official plugins are available:
+<p align="center">
+  <img src="https://raw.githubusercontent.com/alidabbagh-dev/EXCEL-CLONE/main/image1.png" alt="Excel Clone Screenshot 1" style="max-width: 100%; height: auto; margin-bottom: 20px;">
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p align="center">
+  <img src="https://raw.githubusercontent.com/alidabbagh-dev/EXCEL-CLONE/main/image2.jpg" alt="Excel Clone Screenshot 2" style="max-width: 100%; height: auto; margin-bottom: 20px;">
+</p>
 
-## React Compiler
+## Features
+- Fully responsive spreadsheet layout 📱💻  
+- Font customization: adjust size, bold, italic 🅰️  
+- Cell background and text color customization 🎨  
+- Undo / Redo actions ↩️↪️  
+- Formula support: SUM, AVG, MAX, MIN ➕➗  
+- Filter cells based on values 🔍  
+- Built with React for a smooth and interactive experience ⚛️  
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies
+- React.js  
+- JavaScript 
+- CSS3 / Tailwind
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### How It Works
+The application mimics core Excel functionalities, using React state management to handle cell values, formulas, formatting, and undo/redo operations. The spreadsheet is fully responsive and works across devices.
+
+---
+
+### [Try the Live Version](https://alidabbagh-excel-clone.vercel.app/)
